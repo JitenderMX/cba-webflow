@@ -84,9 +84,11 @@
       width: 100%;
       margin: auto;
       max-width: 1440px;
+      overflow-x: scroll;
       display: flex;
       justify-content: space-evenly;
       /* align-items: center; */
+      /* flex-wrap: wrap; */
       gap: 30px;
     }
 
@@ -735,6 +737,23 @@
           </div>
         </div>
       </div>
+      <div class="exhibition-side exhibition-mid">
+        <h2>Festive Fusion</h2>
+        <p>11th August 2023</p>
+        <div class="exhibition-slider">
+          <div class="slider-body slick-mid" id="">
+            <div><img src="images/slider1-1.JPG" alt=""></div>
+            <div><img src="images/slider1-2.JPG" alt=""></div>
+            <div><img src="images/slider1-3.JPG" alt=""></div>
+            <div><img src="images/slider1-4.JPG" alt=""></div>
+            <div><img src="images/slider1-5.JPG" alt=""></div>
+          </div>
+          <div class="arrow-cont">
+            <i class="fas fa-long-arrow-alt-left" id="slick-mid-prev"></i>
+            <i class="fas fa-long-arrow-alt-right" id="slick-mid-next"></i>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <!-- Exhibition Form Section End  -->
@@ -1288,6 +1307,26 @@
 
       $('#slick-right-next').on('click', function () {
         $('.slick-right').slick('slickNext');
+      });
+      $('.slick-mid').slick({
+        // Slick configuration options go here
+        dots: false,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 200,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        // Add more options as needed
+      });
+
+      // Enable navigation with custom arrows
+      $('#slick-mid-prev').on('click', function () {
+        $('.slick-mid').slick('slickPrev');
+      });
+
+      $('#slick-mid-next').on('click', function () {
+        $('.slick-mid').slick('slickNext');
       });
     });
   </script>
